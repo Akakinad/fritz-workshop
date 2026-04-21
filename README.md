@@ -1,93 +1,120 @@
-# 42 Berlin Workshop
+# FRITZ!Box Workshop – Reverse Engineering & CLI-Entwicklung
 
+<!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=2 -->
 
+- [Einführung](#einf%C3%BChrung)
+- [Workshop-Überblick](#workshop-%C3%BCberblick)
+  - [Teamarbeit](#teamarbeit)
+- [Benötigte Materialien](#ben%C3%B6tigte-materialien)
+- [Zeitplan](#zeitplan)
+- [Phase 1: FRITZ!Box Hardware Reverse Engineering (ca. 2 Stunden)](#phase-1-fritzbox-hardware-reverse-engineering-ca-2-stunden)
+- [Phase 2: FRITZ!Box Webinterface Reverse Engineering (ca. 2 Stunden)](#phase-2-fritzbox-webinterface-reverse-engineering-ca-2-stunden)
+- [Phase 3: CLI-Entwicklung & Use-Case-Umsetzung (Vollständiger Tag)](#phase-3-cli-entwicklung--use-case-umsetzung-vollst%C3%A4ndiger-tag)
+  - [Vorschlag zu Ausbaustufen der CLI](#vorschlag-zu-ausbaustufen-der-cli)
+- [Projektorganisation & Tipps](#projektorganisation--tipps)
+- [Viel Erfolg!](#viel-erfolg)
 
-## Getting started
+<!-- mdformat-toc end -->
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Einführung<a name="einf%C3%BChrung"></a>
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+Willkommen zum FRITZ!Box Workshop! In diesem Workshop werdet ihr in die Welt des Reverse Engineerings und der Netzwerktechnologie eintauchen. Ziel ist es so viel ihr könnt über die HTTP- und Serielle Schnittstelle herauszufinden und mit den Erkenntnissen ein Kommandozeilenprogramm zur Steuerung zu entwickeln.
 
-## Add your files
+## Workshop-Überblick<a name="workshop-%C3%BCberblick"></a>
 
-* [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+Der Workshop ist in drei Phasen unterteilt, die aufeinander aufbauen.
 
-```
-cd existing_repo
-git remote add origin https://gitlab.avm.de/ent-ba-testsysteme/42-berlin-workshop.git
-git branch -M main
-git push -uf origin main
-```
+- **Phase 1 & 2 (4 Stunden):** Reverse Engineering der FRITZ!Box – Hardware und Webinterface
+- **Phase 3 (Vollständiger Tag):** CLI-Entwicklung und Use-Case-Umsetzung
 
-## Integrate with your tools
+### Teamarbeit<a name="teamarbeit"></a>
 
-* [Set up project integrations](https://gitlab.avm.de/ent-ba-testsysteme/42-berlin-workshop/-/settings/integrations)
+- **Phase 1 & 2:** Arbeit in Zweierteams.
+- **Phase 3:** Zusammenschluss zu Viererteams.
 
-## Collaborate with your team
+## Benötigte Materialien<a name="ben%C3%B6tigte-materialien"></a>
 
-* [Invite team members and collaborators](https://docs.gitlab.com/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/user/project/merge_requests/creating_merge_requests/)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/user/project/issues/managing_issues/#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+- FRITZ!Box (Modell wird bei Workshopbeginn bekannt gegeben)
+- Schraubenzieher
+- Lötstation, Lötzinn und Flux
+- Serial-Adapter (USB zu TTL)
+- Jumperkabel
+- Laptop mit Internetzugang und Entwicklungsumgebung
+- Netzwerkkabel
 
-## Test and Deploy
+## Zeitplan<a name="zeitplan"></a>
 
-Use the built-in continuous integration in GitLab.
+| Zeit              | Aktivität                                           | Teamgröße |
+| ----------------- | --------------------------------------------------- | --------- |
+| Tag 1, Vormittag  | Phase 1: FRITZ!Box Hardware Reverse Engineering     | 2er Teams |
+| Tag 1, Nachmittag | Phase 2: FRITZ!Box Webinterface Reverse Engineering | 2er Teams |
+| Tag 2, Ganztägig  | Phase 3: CLI-Entwicklung & Use-Case-Umsetzung       | 4er Teams |
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/topics/autodevops/requirements/)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ci/environments/protected_environments/)
+## Phase 1: FRITZ!Box Hardware Reverse Engineering (ca. 2 Stunden)<a name="phase-1-fritzbox-hardware-reverse-engineering-ca-2-stunden"></a>
 
-***
+**Ziel:** Ziel ist es, einen Zugang zur FRITZ!Box über die serielle Schnittstelle herzustellen und tiefgründige Informationen über das System zu sammeln.
 
-# Editing this README
+**Aufgaben:**
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+1. Identifiziert die serielle Schnittstelle auf der FRITZ!Box-Platine.
+1. Lötet einen Debug-Stecker an die serielle Schnittstelle an.
+1. Verbindet die FRITZ!Box über den Serial-Adapter mit eurem Laptop.
+1. Konfiguriert eure Software (z.B. Minicom, PuTTY, screen, tio) für die serielle Kommunikation.
+1. Dokumentiert alle Informationen die ihr über die serielle Schnittstelle herausfinden könnt, hebt die für euch erstaunlichen Infos hervor (z.B. Bootloader-Ausgabe, Login-Prompt, etc.) und ändert Dinge am System die euch interessieren, wundern oder Spaß machen.
+1. Dokumentiert eure Vorgehensweise und alle gefundenen Informationen.
 
-## Suggestions for a good README
+**Präsentation:** Nach Ablauf der Zeit präsentiert jedes Team kurz (ca. 5 Minuten) seine Ergebnisse und Erkenntnisse.
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+## Phase 2: FRITZ!Box Webinterface Reverse Engineering (ca. 2 Stunden)<a name="phase-2-fritzbox-webinterface-reverse-engineering-ca-2-stunden"></a>
 
-## Name
-Choose a self-explaining name for your project.
+**Ziel:** Analyse der FRITZ!Box Webinterfaces, um die Funktionsweisen und Kommunikationsmechanismen zu verstehen.
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+**Aufgaben:**
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+1. Untersucht das FRITZ!Box Webinterface und dokumentiert die wichtigsten Funktionen.
+1. Analysiert die HTTP-Requests, die beim Aufrufen verschiedener Seiten und Funktionen gesendet werden (z.B. mit den Entwicklertools eures Browsers).
+1. Identifiziert interessante Parameter, Datenformate und APIs.
+1. Versucht, Zusammenhänge zwischen den Informationen aus der seriellen Schnittstelle und dem Webinterface herzustellen.
+1. Dokumentiert eure Vorgehensweise und alle gefundenen Informationen.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+**Präsentation:** Nach Ablauf der Zeit präsentiert jedes Team kurz (ca. 5 Minuten) seine Ergebnisse und Erkenntnisse.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## Phase 3: CLI-Entwicklung & Use-Case-Umsetzung (Vollständiger Tag)<a name="phase-3-cli-entwicklung--use-case-umsetzung-vollst%C3%A4ndiger-tag"></a>
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+**Ziel:** Entwicklung einer Kommandozeilen-Schnittstelle (CLI) zur Steuerung der FRITZ!Box, basierend auf den Erkenntnissen aus den vorherigen Phasen.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+**Teamarbeit:** Die Zweierteams aus Phase 1 & 2 bilden jeweils ein Viererteam.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+**Use-Case:** Die CLI soll eine Reihe von Funktionen zur Verfügung stellen, um die FRITZ!Box zu steuern und Informationen abzurufen.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+### Vorschlag zu Ausbaustufen der CLI<a name="vorschlag-zu-ausbaustufen-der-cli"></a>
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+| Ausbaustufe | Funktionen                                                                                                                                                                                                             |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0           | Einen Reboot auslösen (via Serial)                                                                                                                                                                                     |
+| 1           | Einen Reboot auslösen (via HTTP)                                                                                                                                                                                       |
+| 2           | Ausgabe von zum Gerät spezifischen Informationen                                                                                                                                                                       |
+| 3           | WLAN an/aus-schalten, SSID/Passwort ausgeben, FRITZ!Smarthome Gerät ansteuern                                                                                                                                          |
+| 4           | Eigene Funktion, Supportdaten abrufen, WLAN WPS aktivieren, SIP Telefonie, Faxen, Netzwerkgeräte auflisten, WLAN-Netze scannen, Temperatur von Chips ausgeben, NAS-Interaktion, VPN-Konfiguration, WLAN-Geräte sperren |
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+**Wichtige Hinweise:**
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+- Konzentriert euch auf die Umsetzung der Ausbaustufen 0-3 mit der höchsten Priorität.
+- Für Ausbaustufe 4 könnt ihr entweder eine eigene Funktion entwickeln oder eine der optionalen Funktionen implementieren.
+- Nutzt die Erkenntnisse aus Phase 1 und 2, um die CLI effizient zu gestalten.
+- Achtet auf eine gute Code-Qualität und Dokumentation.
+- Die Ausbaustufen sind Optional, ihr könnt beliebig viele und andere Funktionen implementieren.
 
-## License
-For open source projects, say how it is licensed.
+**Präsentation:** Am Ende des Workshops präsentiert jedes Team seinen CLI-Prototypen und demonstriert die implementierten Funktionen. (Keine Slides notwendig)
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+## Projektorganisation & Tipps<a name="projektorganisation--tipps"></a>
+
+- **Zeitmanagement:** Plant eure Zeit realistisch und priorisiert die wichtigsten Aufgaben.
+- **Versionskontrolle:** Nutzt Git und ein Repository (Forgejo), um eure Codebasis zu verwalten.
+- **Aufgabenverteilung:** Teilt die Aufgaben innerhalb des Teams auf und kommuniziert regelmäßig.
+- **Testen:** Testet eure CLI gründlich, um Fehler zu vermeiden.
+- **Dokumentation:** Dokumentiert eure Codebasis und eure Vorgehensweise.
+
+## Viel Erfolg!<a name="viel-erfolg"></a>
+
+Wir wünschen euch viel Spaß und Erfolg bei diesem Workshop!
