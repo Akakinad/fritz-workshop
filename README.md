@@ -111,6 +111,7 @@ Der Workshop ist in drei Phasen unterteilt, die aufeinander aufbauen.
 
 - **Zeitmanagement:** Plant eure Zeit realistisch und priorisiert die wichtigsten Aufgaben.
 - **Versionskontrolle:** Nutzt Git und ein Repository (Forgejo), um eure Codebasis zu verwalten.
+  - Erstellt dafür einen Fork von diesem Repository.
 - **Aufgabenverteilung:** Teilt die Aufgaben innerhalb des Teams auf und kommuniziert regelmäßig.
 - **Testen:** Testet eure CLI gründlich, um Fehler zu vermeiden.
 - **Dokumentation:** Dokumentiert eure Codebasis und eure Vorgehensweise.
