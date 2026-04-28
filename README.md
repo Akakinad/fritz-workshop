@@ -122,3 +122,22 @@ Wir wünschen euch viel Spaß und Erfolg bei diesem Workshop!
 
 
 Treiber CP210* MacOS https://community.silabs.com/s/article/cp210x-mac-os-drivers?language=en_US
+
+# FRITZ!Box 7530 AX Reverse Engineering Workshop
+
+**42 Berlin Workshop - April 28-29, 2026**
+
+A comprehensive reverse engineering project exploring the FRITZ!Box 7530 AX router through hardware serial access, web interface API analysis, and CLI tool development.
+
+---
+
+## 🎯 Project Overview
+
+This workshop project demonstrates full-stack reverse engineering skills:
+- **Hardware Level:** Serial UART access, board analysis
+- **Network Level:** HTTP API reverse engineering, session management
+- **Software Level:** CLI tool development for router control
+
+---
+
+## 📁 Project Structure
