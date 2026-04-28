@@ -119,3 +119,6 @@ Der Workshop ist in drei Phasen unterteilt, die aufeinander aufbauen.
 ## Viel Erfolg!<a name="viel-erfolg"></a>
 
 Wir wünschen euch viel Spaß und Erfolg bei diesem Workshop!
+
+
+Treiber CP210* MacOS https://community.silabs.com/s/article/cp210x-mac-os-drivers?language=en_US
